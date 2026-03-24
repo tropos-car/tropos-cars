@@ -51,11 +51,12 @@ wheel.license-files = ["external/ecrad_source/VERSION"]
 provider = "scikit_build_core.metadata.regex"
 input = "external/ecrad_source/VERSION"
 regex = ".*?"
+result = ["{value}"]
 
 [[tool.scikit-build.generate]]
 path = "tcars/_ecrad_version.py"
 template = '''
-__version__ = "${classifiers}"
+__version__ = "${classifiers[0]}"
 '''
 
 #[tool.scikit-build.build.hooks.custom]
