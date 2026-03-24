@@ -54,7 +54,7 @@ regex = "(?P<value>.+?)"
 [[tool.scikit-build.generate]]
 path = "tcars/_ecrad_version.py"
 template = '''
-__version__ = "${classifiers[0]}"
+__version__ = "${description}"
 '''
 
 #[tool.scikit-build.build.hooks.custom]
