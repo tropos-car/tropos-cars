@@ -8,10 +8,14 @@ except PackageNotFoundError:
     pass
 
 try:
-    from ._ecrad_version import __ecrad_version__
+    from tcars._ecrad_version import __ecrad_version__
     __version__ += f", ecrad-{__ecrad_version__}"
 except:
-    # package is not installed
+    try:
+        from ._ecrad_version import __ecrad_version__
+        __version__ += f", ecrad-{__ecrad_version__}"
+    except:
+        pass
     pass
 
 import logging
