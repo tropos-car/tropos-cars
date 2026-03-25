@@ -38,7 +38,7 @@ def cli_tcars():
 #################################################################################################################
 # init cli
 @click.version_option(message=f"tcars: version {tcars.__version__}, ecrad: version {tcars.ecrad.__version__}")
-@click.group("ecrad")
+@click.command("ecrad")
 @click.argument("namfile",type=click.Path(dir_okay=False, exists=True), nargs=1)
 @click.argument("infile",type=click.Path(dir_okay=False, exists=True), nargs=1)
 @click.argument("outfile",type=click.Path(dir_okay=False, exists=False), nargs=1)
