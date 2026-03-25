@@ -7,8 +7,8 @@ import subprocess as sproc
 import numpy as np
 
 ecrad_bin = os.path.join(
-        importlib.resources.files("ecrad"),
-        "bin/ecrad"
+        importlib.resources.files("tcars"),
+        "ecrad/bin/ecrad"
     )
 
 def ecrad_run(cfg, inp):

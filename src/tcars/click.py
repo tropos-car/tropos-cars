@@ -50,8 +50,8 @@ def cli_ecrad(namfile,infile,outfile,config=None):
     """
     config = tcars.utils.merge_config(config)
     ecrad_bin = os.path.join(
-        importlib.resources.files("ecrad"),
-        "bin/ecrad"
+        importlib.resources.files("tcars"),
+        "ecrad/bin/ecrad"
     )
 
     namfile_dict = f90nml.read(namfile)
