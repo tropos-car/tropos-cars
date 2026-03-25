@@ -28,7 +28,7 @@ def cli_tcars():
     pass
 
 
-@click.version_option(version=f"tcars:{tcars.__version__}, ecrad:{tcars.ecrad.__version__}")
+@click.version_option(version=f"ecrad: version {tcars.ecrad.__version__}", message=f"tcars: version {tcars.__version__},")
 @click.group("ecrad")
 def cli_ecrad():
     pass

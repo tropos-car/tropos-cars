@@ -1,2 +1,2 @@
-import tcars.ecrad
-__version__ = tcars.ecrad.__version__
+import importlib
+__version__ = importlib.import_module("tcars.ecrad._version").__version__
