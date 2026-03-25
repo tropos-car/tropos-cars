@@ -61,7 +61,12 @@ def cli_ecrad(namfile,infile,outfile,config=None):
             capture_output=True,
             text=True,
         )
-    
+    stdout = pstat.stdout.splitlines()
+    for i,line in enumerate(stdout[::-1]):
+        if line.startswith("ERROR STOP"):
+            print(stdout[::-1][:i])
+            raise ValueError(line)
+        
     flx = xr.load_dataset(outfile)
     flx["ECRAD"] = ((), np.int32(0))
     flx["ECRAD"].attrs = {
