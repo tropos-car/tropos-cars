@@ -16,6 +16,7 @@ import f90nml
 
 import tcars
 import tcars.ecrad
+import tcars.utils
 
 logger = logging.getLogger(__name__)
 
