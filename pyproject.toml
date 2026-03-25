@@ -27,6 +27,7 @@ dependencies = [
     "addict",
     "trosat-base @ git+https://github.com/hdeneke/trosat-base.git#egg=trosat-base",
     "tqdm",
+    "parser",
 ]
 
 [project.optional-dependencies]
