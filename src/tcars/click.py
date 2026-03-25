@@ -41,13 +41,11 @@ def cli_tcars():
 @click.group("ecrad")
 @click.argument("namfile",type=click.Path(dir_okay=False, exists=True), nargs=1)
 @click.argument("infile",type=click.Path(dir_okay=False, exists=True), nargs=1)
-@click.argument("outfile",type=click.Path(dir_okay=False, exists=True), nargs=1)
+@click.argument("outfile",type=click.Path(dir_okay=False, exists=False), nargs=1)
 @click.option("--config", "-c", type=click.Path(dir_okay=False, exists=True),
               help="Config file - will merge and override the default config.")
 def cli_ecrad(namfile,infile,outfile,config=None):
-    """Print FILENAME.
-
-    FILENAME is the name of the file to check.
+    """Run vanilla ecrad on the command line.
     """
     config = tcars.utils.merge_config(config)
     ecrad_bin = os.path.join(
@@ -70,6 +68,6 @@ def cli_ecrad(namfile,infile,outfile,config=None):
         "config": json.dumps(namfile_dict),
         "stdout": pstat.stdout.splitlines(),
     }
-    
+
     flx.to_netcdf(outfile)
 
