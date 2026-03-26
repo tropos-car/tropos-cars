@@ -1,0 +1,15 @@
+name: tcars
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - netcdf4
+  - netcdf-fortran
+  - hdf5
+  - cmake
+  - cxx-compiler
+  - fortran-compiler
+  - openblas
+  - pip
+  - pip:
+    - git+https://github.com/tropos-car/tropos-cars@main#egg=tcars

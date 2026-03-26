@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools_scm", "scikit-build-core", "hatchling"]
+requires = ["setuptools_scm", "scikit-build-core"]
 build-backend = "scikit_build_core.build"
 
 [project]
@@ -61,10 +61,6 @@ path = "tcars/ecrad/_version.py"
 template = '''
 __version__ = version = "${description}"
 '''
-
-#[tool.scikit-build.build.hooks.custom]
-#path = "generate_ecrad_version_hook.py"
-#entry-point = "generate_ecrad_version_file"
 
 [tool.setuptools_scm]
 local_scheme = "dirty-tag"
